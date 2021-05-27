@@ -1,29 +1,62 @@
-algoritmo Ex7_atividade;
-// Síntese
-//  Objetivo:  Ler 2 números e apresentar a diferença entre eles
-//  Entrada :  N1, N2
-//  Saída   :  Diferenca
+#include<stdio.h>
+#include<locale.h>
+#include<stdlib.h>
 
-
-principal
-	// Declarações
-	inteiro N1, N2, Diferenca;
-	// Instruções
-	escreval("-----------------------------------------------------------");
-	escreval("           Te direi a diferença entre 2 números!           ");
-	escreval("-----------------------------------------------------------");
-	escreva("> Me informe o valor do primeiro número: ");
-	leia(N1);
+int main(){
 	
-	escreva("> Me informe o valor do segundo número: ");
-	leia(N2);
-	escreval("-----------------------------------------------------------");
-	se (N1 > N2) entao
-		Diferenca = N1 - N2;
-		escreval("> A diferença entre ",N1," e ",N2," é de: ", Diferenca);  
-	senao
-		Diferenca = N2 - N1;
-		escreval("> A diferença entre ",N2," e ",N1," é de: ", Diferenca); 
-	fimSe
-	escreva("-----------------------------------------------------------");
-fimPrincipal
+	int opcao;
+	
+	setlocale(LC_ALL,"Portuguese");
+	
+	printf("Olá, seja muito bem vindo(a)\nao selecionador de Regiões\n");
+	printf("Aqui você poderá escolher qual região do país você pretende visitar\n");
+	printf("\n");
+		printf("=====================\n");
+		printf("    Menu de Opções   \n");
+		printf("=====================\n");
+			printf("[1] Norte\n");
+			printf("[2] Nordeste\n");
+			printf("[3] Centro-Oeste\n");
+			printf("[4] Sudeste\n");
+			printf("[5] Sul\n");
+			printf("[0] Sair do seletor\n");
+				printf("Digite a opção desejada: ");
+					while(scanf("%d",&opcao)!=1){
+						while(getchar()!='\n');
+					}
+		switch(opcao){
+			case 1:
+				system("cls");
+				printf("A REGIÃO ESCOLHIDA FOI A REGIÃO NORTE!\n");
+				printf("TENHA UMA BOA VIAJEM!");
+			break;
+			case 2:
+				system("cls");
+				printf("A REGIÃO ESCOLHIDA FOI A REGIÃO NORDESTE!\n");
+				printf("TENHA UMA BOA VIAJEM!");
+			break;
+			case 3:
+				system("cls");
+				printf("A REGIÃO ESCOLHIDA FOI A REGIÃO CENTRO-OESTE!\n");
+				printf("TENHA UMA BOA VIAJEM!");
+			break;
+			case 4:
+				system("cls");
+				printf("A REGIÃO ESCOLHIDA FOI A REGIÃO SUDESTE!\n");
+				printf("TENHA UMA BOA VIAJEM!");
+			break;
+			case 5:
+				system("cls");
+				printf("A REGIÃO ESCOLHIDA FOI A REGIÃO SUL!\n");
+				printf("TENHA UMA BOA VIAJEM!");
+			break;
+			case 0:
+				system("cls");
+				printf("APARENTEMENTE VOCÊ NÃO ESCOLHEU NENHUMA REGIÃO\n");
+				printf("CONSIDERE REFAZER O TESTE CASE TENHA DIGITADO ERRADO\n");
+				printf("CASO CONTRÁRIO, FICAMOS AGRADECIDOS POR TER URILIZADO O NOSSO SISTEMA\n");
+				return 0;
+			break;
+		}
+	return 0;
+}

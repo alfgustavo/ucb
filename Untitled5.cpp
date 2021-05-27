@@ -1,25 +1,32 @@
-algoritmo Ex6_atividade;
-// Síntese
-//  Objetivo:  Descobrir se um número é par ou ímpar
-//  Entrada :  Numero
-//  Saída   :  Par ou ímpar
+#include<stdio.h>
+#include<ctype.h>
+#include<locale.h>
 
-
-principal
-	// Declarações
-	inteiro Numero;
-	// Instrções
-	escreval("-----------------------------------------------------------");
-	escreval("          Descobrirei se um número é par ou ímpar!         ");
-	escreval("-----------------------------------------------------------");
+int main(){
 	
-	escreva("> Me diga um número qualquer: ");
-	leia(Numero);
-	escreval("-----------------------------------------------------------");
-	se (Numero%2 > 0) entao
-		escreval("> O número: ",Numero," é impar!");
-	senao
-		escreval("> O número: ",Numero," é par!");
-	fimSe
-	escreva("-----------------------------------------------------------");
-fimPrincipal
+	setlocale(LC_ALL,"Portuguese");
+	char sexo;
+	
+	printf("Escreva seu sexo: ");
+	 	scanf("%c",&sexo);
+	 	sexo = toupper(sexo);
+	 	
+	if(sexo!='F' && sexo!='M'){
+		while(sexo!='F' && sexo!='M'){
+			printf("Escreva seu sexo\nF ou M: ");
+				fflush(stdin);
+				scanf("%c",&sexo);
+				sexo = toupper(sexo);
+		}
+	}
+	
+	printf("\n");
+	
+	if(sexo=='F'){
+		printf("Seu sexo por escrito por extenso é: Feminino");
+	}else if(sexo=='M'){
+		printf("Seu sexo escrito por extenso é: Masculino");
+	}
+	
+	return 0;
+}

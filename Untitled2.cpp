@@ -1,29 +1,26 @@
-algoritmo Ex_2atividade;
-// Síntese
-//  Objetivo:  Calcular módulo de um número
-//  Entrada :  Numero
-//  Saída   :  Modulo
+#include<stdio.h>
+#include<stdlib.h>
 
-
-principal
-	// Declarações
-	real Numero;
-	inteiro Modulo;
-	// Instruções
-	escreval("-----------------------------------------------------------");
-	escreval("            Transformarei um número em módulo!             ");
-	escreval("-----------------------------------------------------------");
+int main(){
 	
-	escreval("");
+	int i,valor[i],maior;
 	
-	escreva("> Escreva um valor númerico para transformar em módulo: ");
-	leia(Numero);
-	escreval("");
-	
-	se (Numero < 0) entao
-		Modulo = Numero * (-1);
-	senao
-		Modulo = Numero;
-	fimSe
-	escreval("O módulo de: ",Numero," é |",Modulo,"|");
-fimPrincipal
+	printf("--------------------\n");
+	printf("Maior valor digitado\n");
+	printf("--------------------\n");
+		for(i=0;i<3;i++){
+			printf("Digite um valor: ");
+				while(scanf("%d",&valor[i])!=1){
+					printf("\n");
+					printf("Digite apenas valores inteiros: ");
+					while(getchar()!='\n');
+				}
+				maior = valor[i];
+				if(valor[i]>maior){
+					maior = valor[i];
+				}
+		}
+	system("cls");	
+		printf("Dentre todos os %d valores digitados o maior foi: %d",i,maior);
+	return 0;
+}

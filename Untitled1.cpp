@@ -1,42 +1,27 @@
-algoritmo Ex1_atividade;
-// Síntese
-//  Objetivo:  Multar um motorista que ultrapassar o limite de velocidade (20% = R$ 130, 50% = R$ 195)
-//  Entrada :  Placa, Velocidade
-//  Saída   :  Multa
+#include<stdio.h>
 
+// Atividade 1 Lista 5
 
-principal
-	// Declarações
-	inteiro Velocidade, Limite, Multa, Ultrapassado;
-	texto Placa;
-	logico Multado;
-	// Instruções
+int main (){
 	
-	Limite = 80;
-	Multado = falso;
-	
-	escreval("-----------------------------------------------------------------");
-	escreval("                   Bem Vindo a central de multas!                ");
-	escreval("-----------------------------------------------------------------");
-	
-	escreva("> Informe a placa do veículo: ");
-	leia(Placa);
+	float resultado,valor=555,porcentagem;
 
-	escreva("> Informe a que velocidade ele estava: ");
-	leia(Velocidade);
-	escreval("-----------------------------------------------------------------");
-	se (Velocidade/Limite - 1 < 0) entao
-		Multado = falso;
-		escreval(" O condutor do veículo ",Placa," estava dentro dos limites de velocidade.");
-	senao
-		Multado = verdadeiro;
-		Ultrapassado = (Velocidade/Limite - 1)*100;
-		se (Velocidade/Limite - 1 <= 0.2) entao
-			Multa = 130;
-		senao
-			Multa = 195;
-		fimSe
-		escreval("O condutor do veículo ", Placa," será multado em: R$ ", Multa," por ultrapassar os limites de velocidade em ","(",Ultrapassado,"%)"); 
-	fimSe
-	escreva("-----------------------------------------------------------------");
-fimPrincipal
+	
+	printf("----------------------\n");
+	printf("Cálculo de Porcentagem\n");
+	printf("----------------------\n");
+	
+		printf("Digite a pocentagem que deseja calcular: ");
+			while(scanf("%f",&porcentagem)!=1){
+				printf("Digite um valor entre 1 e 100: ");
+				while(getchar()!='\n');
+			}
+			
+		resultado = ((valor*porcentagem)/ 100);
+		
+		printf("\n");
+		
+	printf("%.1f%% porcento de 555 é igual a: %.2f",porcentagem,resultado);
+		
+	return 0;
+}
